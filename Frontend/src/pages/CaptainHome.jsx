@@ -5,7 +5,7 @@ import RidePopUp from "../components/RidePopup";
 import LiveTracking from "./LiveTracking";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import ConfirmRidePopUp from "../components/ConfirmRidePopUp";
+import ConfirmRidePopUp from "../components/ConfirmRidePopup";
 import { getSocket } from "../redux/services/Socket";
 import { useSelector, useDispatch } from "react-redux";
 import { confirmRide } from "../redux/services/Captain";
