@@ -71,10 +71,8 @@ const Home = () => {
   const handleLocationSelect = (location) => {
     if (activeField === "pickup") {
       setPickup(location);
-      setPanelOpen(false);
     } else if (activeField === "destination") {
       setDestination(location);
-      setPanelOpen(false);
     }
     // Reset any other panels that might be open to ensure clean state
     setVehiclePanel(false);

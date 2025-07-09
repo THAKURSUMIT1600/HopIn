@@ -5,7 +5,7 @@ let socket = null;
 
 export const initializeSocket = () => {
   if (!socket) {
-    socket = io("http://localhost:4001/");
+    socket = io(import.meta.env.VITE_BASE_URL);
 
     socket.on("connect", () => {
       console.log("✅ Connected to the Server");
