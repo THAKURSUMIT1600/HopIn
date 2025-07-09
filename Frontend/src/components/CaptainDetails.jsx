@@ -19,11 +19,8 @@ const CaptainDetails = () => {
       const fetchEarnings = async () => {
         try {
           const response = await getCaptainEarnings();
-          console.log("Captain earnings:", response);
           setEarnings(response.earnings || 0);
-        } catch (error) {
-          console.error("Error fetching earnings:", error);
-        }
+        } catch (error) {}
       };
       fetchEarnings();
     }

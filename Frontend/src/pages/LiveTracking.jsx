@@ -98,7 +98,6 @@ const LiveTracking = ({
         setError(null);
       },
       (err) => {
-        console.error("Geolocation error:", err);
         setError("Unable to retrieve your location");
         setLoading(false);
       },
@@ -120,7 +119,6 @@ const LiveTracking = ({
         setError(null);
       },
       (err) => {
-        console.error("Watch position error:", err);
         setError("Location tracking error");
       },
       {
@@ -197,7 +195,6 @@ const LiveTracking = ({
     margin: "0 auto 8px",
   };
 
-  console.log("Current Position:", currentPos);
   return (
     <div style={containerStyle} className={className}>
       <style>{`

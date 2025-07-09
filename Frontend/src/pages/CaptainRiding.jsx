@@ -39,8 +39,6 @@ const CaptainRiding = () => {
     if (response && response.ride) {
       toast("Ride finished successfully");
       navigate("/captain-home");
-    } else {
-      console.error("Unexpected response:", response);
     }
   };
 

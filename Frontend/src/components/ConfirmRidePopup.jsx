@@ -78,13 +78,9 @@ const ConfirmRidePopUp = (props) => {
         props.setRidePopupPanel(false);
         navigate("/captain-riding", { state: { ride: props.rideData } });
       } else {
-        console.error("Unexpected response:", response);
-        // Show toast for unexpected response
         toast.error("Unexpected response from server");
       }
     } catch (err) {
-      console.error(err.message);
-
       // Show appropriate toast message based on the error
       if (err.message.includes("Invalid OTP")) {
         toast.error("Please enter correct OTP");

@@ -56,7 +56,6 @@ const Home = () => {
   const socket = getSocket();
   useEffect(() => {
     socket.emit("join", { userId: user?._id, userType: "user" });
-    console.log("Socket connected for user:", user?._id);
   }, [user]);
 
   // Toast function
@@ -92,7 +91,6 @@ const Home = () => {
 
     try {
       const fare = await getFareEstimate(pickup, destination);
-      console.log("Estimated Fare:", fare);
 
       // Simulate a brief delay to show the loading message
       setTimeout(() => {
@@ -103,7 +101,6 @@ const Home = () => {
         setToastState({ show: false, message: "", type: "" });
       }, 1500);
     } catch (error) {
-      console.error("Error fetching fare:", error.message);
       setIsLoading(false);
       showToast("Failed to fetch fare. Please try again.");
     }
@@ -111,13 +108,11 @@ const Home = () => {
 
   useEffect(() => {
     socket.on("ride-started", (data) => {
-      console.log("Ride started:", data);
       setWaitingForDriver(false);
       navigate("/riding", { state: { ride: data } });
     });
 
     socket.on("ride-canceled", (data) => {
-      console.log("Ride canceled:", data);
       setVehiclePanel(true);
       setConfirmRidePanel(false);
       setWaitingForDriver(false);
@@ -126,7 +121,6 @@ const Home = () => {
     });
 
     socket.on("ride-confirmed", (data) => {
-      console.log("Ride confirmed:", data);
       setRide(data);
       setVehicleFound(false);
       // Close other panels but keep waiting for driver open
@@ -243,7 +237,6 @@ const Home = () => {
       selectedVehicleDistance,
       selectedVehicleDuration
     );
-    console.log("Ride created successfully");
     return response;
   };
 

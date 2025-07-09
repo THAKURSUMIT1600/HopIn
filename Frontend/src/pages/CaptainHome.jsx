@@ -26,7 +26,6 @@ const CaptainHome = () => {
     if (!captain?._id) return;
 
     socket.emit("join", { userId: captain._id, userType: "captain" });
-    console.log("✅ Socket connected for captain:", captain._id);
 
     const intervalId = setInterval(() => {
       navigator.geolocation.getCurrentPosition(
@@ -40,11 +39,9 @@ const CaptainHome = () => {
             captainId: captain._id,
             location,
           });
-
-          console.log("📍 Location emitted:", location);
         },
         (error) => {
-          console.error("Geolocation error:", error);
+          // Geolocation error
         }
       );
     }, 10000);
@@ -52,13 +49,11 @@ const CaptainHome = () => {
     return () => {
       clearInterval(intervalId);
       socket.emit("leave", { userId: captain._id, userType: "captain" });
-      console.log("❌ Socket disconnected for captain:", captain._id);
     };
   }, [captain]);
 
   socket.on("new-ride", (data) => {
     setRideData(data);
-    console.log("📩 New ride data received:", data);
     setRidePopupPanel(true);
   });
 

@@ -219,7 +219,6 @@ export const getFareEstimate = async (pickup, destination) => {
     );
 
     if (response.status === 200 && response.data) {
-      console.log("Fare estimate response:", response.data);
       return response.data;
     } else {
       throw new Error("Failed to fetch fare estimate.");
@@ -280,7 +279,6 @@ export const createRide = async (
     );
 
     if (response.status === 201) {
-      console.log("Ride created response:", response.data.ride);
       return response.data.ride;
     } else {
       throw new Error("Failed to create ride.");

@@ -27,7 +27,6 @@ export const registerCaptain = createAsyncThunk(
           },
         } = response.data;
 
-        console.log("Captain Data:", response.data);
         toast.success("Registered & Logged in successfully!");
         return {
           firstname,
@@ -89,7 +88,6 @@ export const loginCaptain = createAsyncThunk(
             vehicle: { color, plate, capacity, vehicleType },
           },
         } = response.data;
-        console.log("Captain Data:", response.data);
 
         return {
           firstname,

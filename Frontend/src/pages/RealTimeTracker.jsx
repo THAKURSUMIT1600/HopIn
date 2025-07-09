@@ -96,12 +96,6 @@ const fallbackCenter = { lat: 28.6139, lng: 77.209 }; // Delhi as fallback
 // Component to handle map centering and bounds
 function MapController({ captainPos, pickupPos, destinationPos }) {
   const map = useMap();
-  console.log(
-    "Having location information :",
-    captainPos,
-    pickupPos,
-    destinationPos
-  );
 
   useEffect(() => {
     const positions = [captainPos, pickupPos, destinationPos].filter(
@@ -133,7 +127,6 @@ function MapController({ captainPos, pickupPos, destinationPos }) {
 // Enhanced geocoding function
 const geocodeAddress = async (address) => {
   if (!address || typeof address !== "string" || address.trim() === "") {
-    console.warn("Invalid address provided for geocoding");
     return null;
   }
 
@@ -165,10 +158,8 @@ const geocodeAddress = async (address) => {
       };
     }
 
-    console.warn("No geocoding results found for address:", cleanAddress);
     return null;
   } catch (error) {
-    console.error("Geocoding error for address:", address, error);
     return null;
   }
 };
@@ -199,7 +190,6 @@ const getOSRMRoute = async (start, end) => {
 
     return null;
   } catch (error) {
-    console.error("OSRM routing error:", error);
     return null;
   }
 };
@@ -231,7 +221,6 @@ const getOpenRouteServiceRoute = async (start, end) => {
 
     return null;
   } catch (error) {
-    console.error("OpenRouteService routing error:", error);
     return null;
   }
 };
@@ -241,20 +230,13 @@ const generateRoute = async (start, end) => {
   if (!start || !end) return [];
 
   // Try OSRM first (free and reliable)
-  console.log("Attempting to get route from OSRM...");
   let routePoints = await getOSRMRoute(start, end);
 
   if (routePoints) {
-    console.log(
-      "Route successfully fetched from OSRM with",
-      routePoints.length,
-      "points"
-    );
     return routePoints;
   }
 
   // If OSRM fails, create an improved curved path
-  console.log("OSRM failed, generating improved curved route...");
   return generateImprovedCurvedRoute(start, end);
 };
 
@@ -324,13 +306,11 @@ const RealTimeTracker = ({
   });
   const watchId = useRef();
   const mapRef = useRef();
-  console.log("ridedataaaa", rideData?.pickup, rideData?.destination);
 
   // Geocode pickup and destination addresses
   useEffect(() => {
     const geocodeLocations = async () => {
       if (!rideData) {
-        console.warn("No ride data provided");
         setError("No ride data available");
         return;
       }
@@ -339,33 +319,25 @@ const RealTimeTracker = ({
 
       try {
         if (rideData.pickup) {
-          console.log("Geocoding pickup address:", rideData.pickup);
           const pickupCoords = await geocodeAddress(rideData.pickup);
           if (pickupCoords) {
             setPickupPos(pickupCoords);
             setGeocodingStatus((prev) => ({ ...prev, pickup: true }));
-            console.log("Pickup geocoded successfully:", pickupCoords);
           } else {
-            console.warn("Failed to geocode pickup address:", rideData.pickup);
+            // Failed to geocode pickup address
           }
         }
 
         if (rideData.destination) {
-          console.log("Geocoding destination address:", rideData.destination);
           const destCoords = await geocodeAddress(rideData.destination);
           if (destCoords) {
             setDestinationPos(destCoords);
             setGeocodingStatus((prev) => ({ ...prev, destination: true }));
-            console.log("Destination geocoded successfully:", destCoords);
           } else {
-            console.warn(
-              "Failed to geocode destination address:",
-              rideData.destination
-            );
+            // Failed to geocode destination address
           }
         }
       } catch (error) {
-        console.error("Error during geocoding process:", error);
         setError("Failed to locate addresses on map");
       }
     };
@@ -389,7 +361,6 @@ const RealTimeTracker = ({
             setRouteInfo(`Route: ~${distance.toFixed(1)} km`);
           }
         } catch (error) {
-          console.error("Route generation failed:", error);
           setRouteInfo("Route calculation failed");
         } finally {
           setRouteLoading(false);
@@ -436,15 +407,8 @@ const RealTimeTracker = ({
         setAccuracy(coords.accuracy);
         setLoading(false);
         setError(null);
-        console.log(
-          "Captain initial position:",
-          newPos,
-          "Accuracy:",
-          coords.accuracy
-        );
       },
       (err) => {
-        console.error("Geolocation error:", err);
         let errorMessage = "Unable to get your location";
 
         switch (err.code) {
@@ -479,7 +443,6 @@ const RealTimeTracker = ({
         };
         setCaptainPos(newPos);
         setAccuracy(coords.accuracy);
-        console.log("Captain position updated:", newPos);
       },
       (err) => {
         console.error("Watch position error:", err);

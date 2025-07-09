@@ -24,14 +24,12 @@ function CaptainHistory() {
       try {
         setLoading(true);
         const response = await getCaptainTripHistory();
-        console.log("Captain trip history response:", response);
         if (response && response.tripHistory) {
           setRides(response.tripHistory);
         } else {
           setRides([]);
         }
       } catch (error) {
-        console.error("Error fetching captain trip history:", error);
         setRides([]);
       } finally {
         setLoading(false);

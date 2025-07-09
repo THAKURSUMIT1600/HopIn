@@ -8,11 +8,11 @@ export const initializeSocket = () => {
     socket = io(import.meta.env.VITE_BASE_URL);
 
     socket.on("connect", () => {
-      console.log("✅ Connected to the Server");
+      // Connected to the Server
     });
 
     socket.on("disconnect", () => {
-      console.log("❌ Disconnected from the Server");
+      // Disconnected from the Server
     });
   }
   return socket;

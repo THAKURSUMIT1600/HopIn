@@ -10,7 +10,6 @@ const VehiclePanel = ({
 }) => {
   // Handle both fare structures: direct fare object or nested fares object
   const fareData = fare.fares || fare;
-  console.log("Fare Data:", fareData);
   const vehicles = [
     {
       id: "Car",
@@ -51,7 +50,6 @@ const VehiclePanel = ({
   };
 
   const handleVehicleSelect = (vehicle) => {
-    console.log("Selected Vehicle:", vehicle);
     const vehicleData = getVehicleData(vehicle.fareKey);
 
     setVehicleType(vehicle.name);

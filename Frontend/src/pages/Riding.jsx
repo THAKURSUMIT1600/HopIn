@@ -57,7 +57,6 @@ const Riding = () => {
   };
 
   socket.on("ride-finished", (data) => {
-    console.log("Ride finished event received:", data);
     toast("Ride finished successfully");
     navigate("/home");
   });

@@ -47,7 +47,6 @@ const ConfirmRide = (props) => {
     setIsLoading(true);
     try {
       const result = await createRide();
-      console.log("Ride created successfully:", result);
       if (result) {
         setVehicleFound(true);
         setConfirmRidePanel(false);
@@ -59,7 +58,6 @@ const ConfirmRide = (props) => {
         );
       }
     } catch (error) {
-      console.error("Error creating ride:", error);
       showToast(
         error.message || "Something went wrong. Please try again.",
         "error"
