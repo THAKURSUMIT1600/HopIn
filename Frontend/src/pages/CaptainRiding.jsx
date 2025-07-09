@@ -7,7 +7,7 @@ import { useLocation } from "react-router-dom";
 import { toast } from "sonner";
 import { finishRide } from "../redux/services/Captain";
 import { useNavigate } from "react-router-dom";
-import Logo from "../assets/logo.png";
+import Logo from "../assets/Logo.png";
 import RealTimeTracker from "./RealTimeTracker";
 const CaptainRiding = () => {
   const [finishRidePanel, setFinishRidePanel] = useState(false);
