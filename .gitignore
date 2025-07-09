@@ -1,0 +1,219 @@
+# Dependencies
+Backend/node_modules/
+Frontend/node_modules/
+node_modules/
+
+# Environment variables
+Backend/.env
+Frontend/.env
+Backend/.env.local
+Frontend/.env.local
+Backend/.env.development.local
+Frontend/.env.development.local
+Backend/.env.test.local
+Frontend/.env.test.local
+Backend/.env.production.local
+Frontend/.env.production.local
+
+# Logs
+Backend/logs/
+Frontend/logs/
+Backend/npm-debug.log*
+Frontend/npm-debug.log*
+Backend/yarn-debug.log*
+Frontend/yarn-debug.log*
+Backend/yarn-error.log*
+Frontend/yarn-error.log*
+Backend/lerna-debug.log*
+Frontend/lerna-debug.log*
+Backend/.pnpm-debug.log*
+Frontend/.pnpm-debug.log*
+
+# Runtime data
+Backend/pids
+Frontend/pids
+Backend/*.pid
+Frontend/*.pid
+Backend/*.seed
+Frontend/*.seed
+Backend/*.pid.lock
+Frontend/*.pid.lock
+
+# Coverage directory used by tools like istanbul
+Backend/coverage/
+Frontend/coverage/
+Backend/.nyc_output
+Frontend/.nyc_output
+
+# Dependency directories
+Backend/jspm_packages/
+Frontend/jspm_packages/
+
+# TypeScript cache
+Backend/*.tsbuildinfo
+Frontend/*.tsbuildinfo
+
+# Optional npm cache directory
+Backend/.npm
+Frontend/.npm
+
+# Optional eslint cache
+Backend/.eslintcache
+Frontend/.eslintcache
+
+# Optional stylelint cache
+Backend/.stylelintcache
+Frontend/.stylelintcache
+
+# Microbundle cache
+Backend/.rpt2_cache/
+Frontend/.rpt2_cache/
+Backend/.rts2_cache_cjs/
+Frontend/.rts2_cache_cjs/
+Backend/.rts2_cache_es/
+Frontend/.rts2_cache_es/
+Backend/.rts2_cache_umd/
+Frontend/.rts2_cache_umd/
+
+# Optional REPL history
+Backend/.node_repl_history
+Frontend/.node_repl_history
+
+# Output of 'npm pack'
+Backend/*.tgz
+Frontend/*.tgz
+
+# Yarn Integrity file
+Backend/.yarn-integrity
+Frontend/.yarn-integrity
+
+# dotenv environment variables file
+Backend/.env
+Frontend/.env
+Backend/.env.test
+Frontend/.env.test
+Backend/.env.production
+Frontend/.env.production
+
+# parcel-bundler cache (https://parceljs.org/)
+Backend/.cache
+Frontend/.cache
+Backend/.parcel-cache
+Frontend/.parcel-cache
+
+# Next.js build output
+Frontend/.next
+Backend/.next
+Frontend/out/
+Backend/out/
+
+# Nuxt.js build / generate output
+Frontend/.nuxt
+Backend/.nuxt
+Frontend/dist
+Backend/dist
+
+# Gatsby files
+Frontend/.cache/
+Backend/.cache/
+Frontend/public
+Backend/public
+
+# Vite build output
+Frontend/dist/
+Frontend/build/
+
+# Rollup.js default build output
+Frontend/dist/
+Backend/dist/
+
+# Uncomment the public line in if your project uses Gatsby and not Next.js
+# https://nextjs.org/blog/next-9-1#public-directory-support
+# Frontend/public
+
+# Storybook build outputs
+Frontend/.out
+Backend/.out
+Frontend/.storybook-out
+Backend/.storybook-out
+Frontend/storybook-static
+Backend/storybook-static
+
+# Temporary folders
+Backend/tmp/
+Frontend/tmp/
+Backend/temp/
+Frontend/temp/
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Database files
+Backend/*.db
+Backend/*.sqlite
+Backend/*.sqlite3
+
+# Session store files
+Backend/sessions/
+
+# Upload directories
+Backend/uploads/
+Frontend/uploads/
+
+# Build artifacts
+Backend/build/
+Frontend/build/
+
+# Test coverage
+Backend/coverage/
+Frontend/coverage/
+Backend/.coverage
+Frontend/.coverage
+
+# PM2 runtime files
+Backend/ecosystem.config.js
+Backend/pids/
+Backend/logs/
+
+# Socket.io temporary files
+Backend/socket.io-tmp/
+
+# Certificate files
+Backend/*.pem
+Backend/*.key
+Backend/*.crt
+Backend/*.csr
+
+# Backup files
+*.backup
+*.bak
+*.old
+*.orig
+
+# Lock files (optional - uncomment if you want to ignore them)
+# Backend/package-lock.json
+# Frontend/package-lock.json
+# Backend/yarn.lock
+# Frontend/yarn.lock
+# Backend/pnpm-lock.yaml
+# Frontend/pnpm-lock.yaml
