@@ -118,8 +118,8 @@ module.exports.getDistanceTime = async (
 
       // Add delay between requests (except for the first one)
       if (i > 0) {
-        console.log(`Waiting 3 seconds before processing ${vType}...`);
-        await delay(3000); // 3 second delay
+        console.log(`Waiting 8 seconds before processing ${vType}...`);
+        await delay(8000); // 8 second delay
       }
       console.log(`\n--- Processing vehicle type: ${vType} ---`);
 
